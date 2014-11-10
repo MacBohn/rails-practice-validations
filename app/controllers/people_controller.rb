@@ -22,10 +22,12 @@ end
 
   def update
     @person = Person.find(params[:id])
-    @person.update(person_params)
+  if  @person.update(person_params)
     redirect_to people_path, notice: "Person updated successfully"
+  else
+    render :edit
   end
-
+end
   private
 
   def person_params

@@ -6,5 +6,6 @@ require 'rails_helper'
       click_on "New Person"
       click_on "Create Person"
       save_and_open_page
+      
     end
   end

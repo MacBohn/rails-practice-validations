@@ -23,9 +23,12 @@ end
 
   def update
     @organization = Organization.find(params[:id])
-    @organization.update(organization_params)
+    if @organization.update(organization_params)
     redirect_to organizations_path, notice: "Organization updated successfully"
+  else
+    render :edit
   end
+end
 
   private
 
