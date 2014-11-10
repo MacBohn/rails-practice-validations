@@ -12,7 +12,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(organization_params)
   if @organization.save
     redirect_to organizations_path, notice: "Organization saved successfully"
-  else @organization_error = "Fields can't be blank"
+  else @organization_error = "Name field can't be blank"
     render :new
   end
 end
