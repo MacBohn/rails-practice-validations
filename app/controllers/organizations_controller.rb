@@ -10,9 +10,9 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
-  if @organization.save
+     if @organization.save
     redirect_to organizations_path, notice: "Organization saved successfully"
-  else @organization_error = "Name field can't be blank"
+  else
     render :new
   end
 end
