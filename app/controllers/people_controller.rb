@@ -10,10 +10,12 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-    @person.save
+    if @person.save
     redirect_to people_path, notice: "Person saved successfully"
+  else @person_error = "Person is not valid"
+    render :new
   end
-
+end
   def edit
     @person = Person.find(params[:id])
   end
